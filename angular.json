@@ -1,9 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "1c6e96ac-32fa-4713-b2a3-f921395746dc"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "my-angular-projectPortFolio_Angular": {
+    "g74-portafolio-Angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -68,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "my-angular-projectPortFolio_Angular:build:production"
+              "browserTarget": "g74-portafolio-Angular:build:production"
             },
             "development": {
-              "browserTarget": "my-angular-projectPortFolio_Angular:build:development"
+              "browserTarget": "g74-portafolio-Angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "my-angular-projectPortFolio_Angular:build"
+            "browserTarget": "g74-portafolio-Angular:build"
           }
         },
         "test": {
@@ -102,5 +105,5 @@
       }
     }
   },
-  "defaultProject": "my-angular-projectPortFolio_Angular"
+  "defaultProject": "g74-portafolio-Angular"
 }

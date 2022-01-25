@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-angular-projectPortFolio_Angular';
+  
+  title: string = "Titulo en variable";
+    
+  constructor () {
+  //agregando funciones al componente ;)
+  }
+
+  logearse(){
+    alert('Insertar funcion de logeo')
+  }
 }

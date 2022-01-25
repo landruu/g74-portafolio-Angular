@@ -1,0 +1,33 @@
+.Style-title {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-family: monospace;
+}
+
+.img-estetica {
+    border-radius: 60%;
+    border: #8108e454 solid 3px;  
+}
+.img-estetica:hover {
+    border-radius: 60%;
+    border: #eae3f0bb solid 3px;  
+}
+
+.imagenn {
+    position: absolute;
+    top: 19.43rem;
+    left: 9.37rem;
+}
+
+@media only screen and (min-width: 400px) and (max-width: 720px) {
+
+    /* Diseños Responsivos*/
+
+    .imagenn {
+        position: absolute;
+        top: 3rem;
+        transition-duration: 1500ms;
+        border: #eae3f0bb solid 3px;
+    }
+}

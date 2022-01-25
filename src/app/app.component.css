@@ -1,0 +1,16 @@
+.estiloTag {
+    margin-top: 2rem;
+}
+
+/**
+    Config responsive
+**/
+
+@media only screen and (min-width: 400px) and (max-width: 720px) {
+
+    /* Diseños Responsivos*/
+    .estiloTag {
+        margin-top: 0;
+        flex-direction: column;
+    }
+}

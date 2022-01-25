@@ -1,0 +1,18 @@
+.activex {
+    color: aqua;
+    margin-left: 0.3rem;
+    font-size: 12px;
+}
+
+.space-left-navBar {
+    margin-right: 0.3rem;
+}
+
+.icono-ap {
+    margin-left: 0.3rem;
+}
+
+.alinear {
+    align-content: center;
+    align-items: center;
+}
