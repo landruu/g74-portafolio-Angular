@@ -13,11 +13,11 @@ import { PortafolioAService } from "../servicios/portafolio-a.service";
 
     }
     
-    portafolioData:any; // declaro variable para guardar datos del portafolios
+    avatarData:any; // declaro variable para guardar imagen del avatar
 
     ngOnInit(): void { // procedimiento que guarda datos en variable
       this.datosPortafolio.ObtenerDatos().subscribe(data =>{
-        this.portafolioData=data;
+        this.avatarData=data;
       });
     }
 
