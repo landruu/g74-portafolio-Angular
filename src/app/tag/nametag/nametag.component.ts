@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PortafolioAService } from 'src/app/servicios/portafolio-a.service';
 
 @Component({
   selector: 'app-nametag',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NametagComponent implements OnInit {
 
-  constructor() { }
+  constructor(private datosPortafolio:PortafolioAService) {}
+
+  portafolioData:any;
 
   ngOnInit(): void {
+    this.datosPortafolio.ObtenerDatos().subscribe(data => {
+
+      this.portafolioData= data;
+
+    })
   }
 
 }

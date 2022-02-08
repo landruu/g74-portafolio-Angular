@@ -7,6 +7,7 @@ import { BannerComponent } from './banner/banner.component';
 import { AvatarComponent } from './avatar/avatar.component';
 import { NametagComponent } from './tag/nametag/nametag.component';
 import { TopBarComponent } from './topBar/top-bar/top-bar.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TopBarComponent } from './topBar/top-bar/top-bar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule // carga del modulo de rutas
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

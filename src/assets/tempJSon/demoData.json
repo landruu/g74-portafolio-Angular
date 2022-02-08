@@ -1,0 +1,17 @@
+{
+    "name": "Andres",
+    "apellido": "Garcia",
+    "Oficio": "Dev Full Stack jr",
+
+    "avatarIMG": "./assets/img/andres-cv.jpg",
+
+    "direccion": {
+        "calle": "Bv Los Granaderos",
+        "numero": "3182"
+    },
+
+    "datosDeContacto": {
+        "telefono": "3512071483",
+        "mail": "andres030685@gmail.com"
+    }
+}
