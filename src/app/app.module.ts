@@ -9,7 +9,8 @@ import { NametagComponent } from './tag/nametag/nametag.component';
 import { TopBarComponent } from './topBar/top-bar/top-bar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MitagComponent } from './presentacion/mitag/mitag.component';
-import { FormacionComponent } from './formacion/formacion.component'
+import { FormacionComponent } from './formacion/formacion.component';
+import { LapizComponent } from './edit/lapiz/lapiz.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormacionComponent } from './formacion/formacion.component'
     NametagComponent,
     TopBarComponent,
     MitagComponent,
-    FormacionComponent
+    FormacionComponent,
+    LapizComponent
   ],
   imports: [
     BrowserModule,
