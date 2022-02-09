@@ -16,6 +16,12 @@
 h2{
     text-align: center;
     margin-bottom: 2px;
+
+
+.ubicationimg {
+    align-content: center;
+    text-align: center;
+    align-items: center;
 }
 
 /**
