@@ -27,7 +27,7 @@
         },
         {
             "id":"002",
-            "img": "",
+            "img": "./assets/img/ap.jpg",
             "tipo":"Tecnologias de programacion",
             "titulo":"Dev Full stack",
             "start":"5/7/21",
@@ -36,7 +36,7 @@
         },
         {
             "id":"003",
-            "img": "",
+            "img": "./assets/img/fcm.jpg",
             "tipo":"E-Commerce",
             "titulo":"Agente de Marketing Digital",
             "start":"1/8/21",
