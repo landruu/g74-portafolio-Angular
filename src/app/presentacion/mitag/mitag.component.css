@@ -1,6 +1,15 @@
-.estiloTag {
+.cardg {
+    background: linear-gradient(to right, rgb(60, 3, 114) 0%, rgb(175, 130, 218) 100%);
     margin-top: 2rem;
     text-align: center;
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+    margin-right: 15px;
+}
+
+.cardg h3 {
+    color: rgb(53, 17, 75);
+    font-size: 2rem;
 }
 
 /**
@@ -10,8 +19,9 @@
 @media only screen and (min-width: 400px) and (max-width: 720px) {
 
     /* Diseños Responsivos*/
-    .estiloTag {
-        margin-top: 0;
-        flex-direction: column;
+    .cardg {
+        margin-top: 1;
+        display: flex;
+        flex-wrap: wrap;
     }
 }
