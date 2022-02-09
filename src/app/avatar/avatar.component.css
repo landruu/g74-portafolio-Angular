@@ -17,7 +17,7 @@
 .imagenn {
     position: absolute;
     top: 19.43rem;
-    left: 9.37rem;
+    left: 14.5rem;
 }
 
 @media only screen and (min-width: 400px) and (max-width: 720px) {
@@ -26,7 +26,8 @@
 
     .imagenn {
         position: absolute;
-        top: 3rem;
+        top: 3.8rem;
+        left: 10.7rem;
         transition-duration: 1500ms;
         border: #eae3f0bb solid 3px;
     }

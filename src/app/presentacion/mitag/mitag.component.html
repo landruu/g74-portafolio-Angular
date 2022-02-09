@@ -3,6 +3,11 @@
       <app-nametag></app-nametag>
     </div>
     <div>
-        Acerca de mi...
+        <h3>Acerca de mi...</h3>
+        <p>
+          Con el tiempo he comprendido la importancia de la "atencion" y eso repercute en todo lo que me decida hacer.
+          En estos utltimos tiempos he estado preparandome con conocimientos como: 
+          <strong *ngFor="let estudio of tagData.estudios">{{estudio.tipo+", "}}</strong>
+        </p>
     </div>
 </div>

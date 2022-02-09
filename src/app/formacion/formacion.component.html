@@ -1,0 +1,16 @@
+<h2 class="col-md-4" style="background: black;">Formacion</h2>
+<div class="estiloTag d-flex" style="background: red;" *ngFor="let formacion of formacionData.estudios">
+    <!--ICONO-->
+    <div class="col-md-4" style="background: blue;">
+        <i><img [src]="formacion.img" alt="formacion academica"></i>
+    </div>
+    <!--Detalle-->
+    <ul>
+        <li class="listyle">  
+                <p><strong>Especialidad:</strong> {{formacion.tipo}}</p>
+                <p><strong>Titulo:</strong> {{formacion.titulo}}</p>
+                <p><strong>Inicia:</strong> {{formacion.start}}</p>
+                <p><strong>Finaliza:</strong> {{formacion.end}}</p>
+        </li>
+    </ul>
+</div>

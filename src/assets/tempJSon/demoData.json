@@ -15,9 +15,31 @@
         "mail": "andres030685@gmail.com"
     },
 
-    "estudios": {
-        "institucion": "Escuela Superior de comercio MB",
-        "carrera": "Analista en sistemas informaticos",
-        "año": "segundo"
-    }
+    "estudios": [
+        {
+            "id":"001",
+            "img":"./assets/img/iconoMB.jpg",
+            "tipo":"Tecnicatura en sistemas",
+            "titulo":"Analista en sistemas informaticos",
+            "start":"2021",
+            "end":"2023 inclusive",
+            "otro":""
+        },
+        {
+            "id":"002",
+            "tipo":"Tecnologias de programacion",
+            "titulo":"Dev Full stack",
+            "start":"5/7/21",
+            "end":"1/5/22",
+            "otro":""
+        },
+        {
+            "id":"003",
+            "tipo":"E-Commerce",
+            "titulo":"Agente de Marketing Digital",
+            "start":"1/8/21",
+            "end":"1/3/22",
+            "otro":""
+        }
+        ]
 }

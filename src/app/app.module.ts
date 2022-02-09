@@ -8,7 +8,8 @@ import { AvatarComponent } from './avatar/avatar.component';
 import { NametagComponent } from './tag/nametag/nametag.component';
 import { TopBarComponent } from './topBar/top-bar/top-bar.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MitagComponent } from './presentacion/mitag/mitag.component'
+import { MitagComponent } from './presentacion/mitag/mitag.component';
+import { FormacionComponent } from './formacion/formacion.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MitagComponent } from './presentacion/mitag/mitag.component'
     AvatarComponent,
     NametagComponent,
     TopBarComponent,
-    MitagComponent
+    MitagComponent,
+    FormacionComponent
   ],
   imports: [
     BrowserModule,
