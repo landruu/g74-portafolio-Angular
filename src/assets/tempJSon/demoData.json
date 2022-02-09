@@ -13,5 +13,11 @@
     "datosDeContacto": {
         "telefono": "3512071483",
         "mail": "andres030685@gmail.com"
+    },
+
+    "estudios": {
+        "institucion": "Escuela Superior de comercio MB",
+        "carrera": "Analista en sistemas informaticos",
+        "año": "segundo"
     }
 }

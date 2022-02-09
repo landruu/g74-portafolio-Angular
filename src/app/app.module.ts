@@ -7,7 +7,8 @@ import { BannerComponent } from './banner/banner.component';
 import { AvatarComponent } from './avatar/avatar.component';
 import { NametagComponent } from './tag/nametag/nametag.component';
 import { TopBarComponent } from './topBar/top-bar/top-bar.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { MitagComponent } from './presentacion/mitag/mitag.component'
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http'
     BannerComponent,
     AvatarComponent,
     NametagComponent,
-    TopBarComponent
+    TopBarComponent,
+    MitagComponent
   ],
   imports: [
     BrowserModule,
