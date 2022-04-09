@@ -8,5 +8,5 @@ import { Component } from "@angular/core"
 
 export class BannerComponent {
     
-    //nada aun
+    //nada aun;
 }
