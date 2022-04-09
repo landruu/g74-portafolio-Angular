@@ -1,0 +1,37 @@
+# click derecho en la carpeta y setea la ubicacion
+
+ls #lista
+pwd #donde esta
+
+git init #convierte la carpeta en un repositorio
+
+#para vincularlo:
+git config --global user.gemail "XXXXX@XXX.com"
+git config --global user.name "Jolie"
+
+git status #te dice en que estado esta tu repositorio ( en rojo lo que no se hizo commit)
+
+git add prueba1.html #agregamos el archivo al repositorio local
+
+git status # cambia el color a verde
+
+git commint # captura del proyecto para el historial.Consola del commit, editar mensaje y la consola muestra los cambios
+
+git commit -m "mensaje" #para no ver la otra interfaz
+
+
+
+git log #para ver el cambio que realizo el commit
+
+#repositorio remoto desde GITHUB
+* se crea el repositorio
+
+git remote add origin "url"
+
+git branch -M main
+git push -u origin main
+
+
+#manage access agregar gente al trabajo (en github.com)
+
+git pull origen main
