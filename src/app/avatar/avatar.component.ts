@@ -10,7 +10,6 @@ import { PortafolioAService } from "../servicios/portafolio-a.service";
 
     constructor(private datosPortafolio:PortafolioAService){
 
-
     }
     
     avatarData:any; // declaro variable para guardar imagen del avatar

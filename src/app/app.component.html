@@ -12,26 +12,19 @@
       <app-avatar></app-avatar>
     </section>
 
-    <!-- NameTag y Sobre mi-->
-    <app-mitag class=""></app-mitag>
+    <!-- en esta seccion se implementa la dinamica de vistas -->
+    <section class="container" id="seccionInformacion">
+      
+      <!-- Insertar Componente menu flotante -->
+      <ul>
+          <a routerLink="/formacion">formacion</a>
+          <a routerLink="/mitag"> Acerca de mi</a>
+      </ul>
+      
 
-    <!-- Educacion -->
-    <app-formacion></app-formacion>
+      <!-- Ingreso RUTAS Dinamincas-->
+      <router-outlet></router-outlet>
 
-    <!-- Otra cosa -->
-    <div class="estiloTag d-flex" style="background: red;">
-      <div class="col-md-4" style="background: blue;">
-        insertar Logo
-      </div>
-      <div>
-        bla bla bla
-      </div>
-    </div>
-    
-    <!--Componetizar este input de color-->
-    <div>
-      <label for="exampleColorInput" class="form-label"> Color picker</label>
-      <input type="color" class="form-control form-control-color" id="exampleColorInput" value="textCenter" title="Choose your color">
-    </div>
+    </section>
 
   </body>
