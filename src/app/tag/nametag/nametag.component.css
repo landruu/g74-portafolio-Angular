@@ -1,12 +1,13 @@
-
-.textCenter {
-    align-items: center;
-    align-content: center;
+.nametag {
+    text-align: center;
 }
 
-.cardg {
-    background: linear-gradient(to right, rgb(60, 3, 114) 0%, rgb(175, 130, 218) 100%);
-    margin-top: 2rem;
-    text-align: center;
-    color: wheat;
+@media only screen and (min-width: 400px) and (max-width: 720px) {
+
+    .nametag span, h2, h4 {
+        display: flex;
+        font-size: 1rem;
+        justify-content: space-between;
+    }
+    
 }

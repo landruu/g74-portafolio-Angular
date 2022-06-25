@@ -1,18 +1,14 @@
 .activex {
-    color: aqua;
-    margin-left: 0.3rem;
+    color: #198754;
+    margin-left: 0.6rem;
     font-size: 12px;
+    text-align: center;
+    border-bottom: #198754 1px solid;
+    border-top: #198754 1px solid;
+    padding: 1px;
 }
 
-.space-left-navBar {
-    margin-right: 0.3rem;
-}
-
-.icono-ap {
-    margin-left: 0.3rem;
-}
-
-.alinear {
+.iconos-container {
     align-content: center;
     align-items: center;
 }

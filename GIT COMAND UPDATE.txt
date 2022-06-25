@@ -11,23 +11,25 @@ git config --global user.name "Jolie"
 
 git status #te dice en que estado esta tu repositorio ( en rojo lo que no se hizo commit)
 
+// PRIMERO ADD, agregar todos los cambios al repositorio
 git add prueba1.html #agregamos el archivo al repositorio local
 
+// verifico
 git status # cambia el color a verde
 
-git commint # captura del proyecto para el historial.Consola del commit, editar mensaje y la consola muestra los cambios
+// actualizo...
+git commit -m "mensaje de actualizacion"
 
-git commit -m "mensaje" #para no ver la otra interfaz
-
-
-
-git log #para ver el cambio que realizo el commit
+// si quiero ver cambios.
+git log
 
 #repositorio remoto desde GITHUB
 * se crea el repositorio
 
+// si no esta establecida la url del repo. Establecer con este comando.
 git remote add origin "url"
 
+//
 git branch -M main
 git push -u origin main
 

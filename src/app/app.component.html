@@ -2,28 +2,39 @@
   <body class="container">
 
     <!--Componente topBar -->
-    <section id="topBar" class="">
+    <section id="header" class="">
+
       <app-top-bar></app-top-bar>
+
+      <!--Banner y Foto de perfil como componente hijo-->
+      <section class="container" id="banner">
+        <app-banner></app-banner>
+      </section>
+
     </section>
     
-    <!--Banner y Foto de perfil-->
-    <section class="container" id="banner">
-      <app-banner></app-banner>
-      <app-avatar></app-avatar>
-    </section>
+    
 
     <!-- en esta seccion se implementa la dinamica de vistas -->
     <section class="container" id="seccionInformacion">
       
-      <!-- Insertar Componente menu flotante -->
-      <ul>
-          <a routerLink="/formacion">formacion</a>
-          <a routerLink="/mitag"> Acerca de mi</a>
-      </ul>
+      <!-- Insertar Componente menu flotante 
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Menu de navegacion
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" routerLink="/formacion">formacion</a>
+          <a class="dropdown-item" routerLink="/mitag">Acerca de mi</a>
+        </div>
+      </div> -->
       
-
       <!-- Ingreso RUTAS Dinamincas-->
+      <div class="separador"></div>
       <router-outlet></router-outlet>
+      
+      <div class="separador"></div>
+      <app-formacion></app-formacion>
 
     </section>
 

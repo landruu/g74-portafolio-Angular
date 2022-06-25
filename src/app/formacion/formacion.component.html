@@ -1,21 +1,27 @@
-<h2 class="col-md-4">Formacion</h2>
-<div class="estiloTag d-flex" style="background: rgb(167, 238, 229);" *ngFor="let formacion of formacionData.estudios">
-    <!--ICONO-->
-    <div class="col-md-4 ubicationimg" style="background: rgb(199, 195, 195);">
-        <i><img [src]="formacion.img" alt="formacion academica"></i>
-        <app-lapiz></app-lapiz>
-    </div>
-    <!--Detalle-->
-    <ul>
-        <li class="listyle d-flex">
-                <div>
-                    <p>{{formacion.tipo}}</p>
+<div class="cardMaster">
+
+    <h3><strong>Formación</strong></h3>
+    <div class="cardChild d-flex" *ngFor="let formacion of formacionData.estudios">
+
+        <!--ICONO-->
+        <div class="col-sm-4 iconform">
+            <i><img [src]="formacion.img" alt="formacion academica"></i>
+        </div>
+    
+        <!--Detalle-->
+        <div class="col-sm-8">
+            <div class="row contentForm">
+                <div class="col-sm-4 cardli">
+                    <h6>{{formacion.tipo}}</h6>
                     <h5>{{formacion.institucion}}</h5>
-                    <h6>{{formacion.titulo}}</h6>
-                    <p><strong>Inicia:</strong> {{formacion.start}}</p>
-                    <p><strong>Finaliza:</strong> {{formacion.end}}</p>
-                </div>  
-                <app-lapiz></app-lapiz>
-        </li>
-    </ul>
+                </div>
+                <div class="col-sm-7 cardli">
+                    <p>{{formacion.titulo}}</p>
+                    <p>Inicia: {{formacion.start}}</p>
+                    <p>Finaliza: {{formacion.end}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

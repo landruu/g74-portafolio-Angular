@@ -6,17 +6,19 @@ import { PortafolioAService } from '../servicios/portafolio-a.service';
   templateUrl: './formacion.component.html',
   styleUrls: ['./formacion.component.css']
 })
+
 export class FormacionComponent implements OnInit {
 
   constructor(private datosPortafolio:PortafolioAService) { 
 
   }
+  
   formacionData:any;
 
   ngOnInit(): void {
     this.datosPortafolio.ObtenerDatos().subscribe(data => {
-      console.log(data)
-      this.formacionData=data; //tomo el objeto json en una variable
+      //tomo el objeto json en una variable
+      this.formacionData=data;
     })
   }
 

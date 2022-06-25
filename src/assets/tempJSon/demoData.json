@@ -1,8 +1,11 @@
-{
+{   
+    "acercademi": {
+        "description": "..."
+    },
+    
     "name": "Andres",
     "apellido": "Garcia",
-    "oficio": "Dev Full Stack jr",
-
+    "oficio": "Developer, Full Stack",
     "avatarIMG": "./assets/img/andres-cv.jpg",
 
     "direccion": {
@@ -31,7 +34,7 @@
             "img": "./assets/img/ap.jpg",
             "institucion":"CESSI, INTI & Ministerio de desarrollo productivo",
             "tipo":"Formacion en programacion",
-            "titulo":"Dev Full stack",
+            "titulo":"Desarollador Full stack",
             "start":"5/7/21",
             "end":"1/5/22",
             "otro":""
@@ -41,7 +44,7 @@
             "img": "./assets/img/fcm.jpg",
             "institucion":"Facultad de Ciencias Médicas (F.C.M.)",
             "tipo":"E-Commerce",
-            "titulo":"Agente de Marketing Digital",
+            "titulo":"Social Media Manager",
             "start":"1/8/21",
             "end":"1/3/22",
             "otro":""

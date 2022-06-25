@@ -11,15 +11,16 @@ import { NametagComponent } from './tag/nametag/nametag.component';
 import { TopBarComponent } from './topBar/top-bar/top-bar.component';
 import { MitagComponent } from './presentacion/mitag/mitag.component';
 import { FormacionComponent } from './formacion/formacion.component';
-import { LapizComponent } from './edit/lapiz/lapiz.component'
+import { LapizComponent } from './edit/lapiz/lapiz.component';
+import { AppLoginComponent } from './login/app-login/app-login.component';
 
 /* Declaro una constante en donde le asigno una lista de rutas */
 const routes: Routes = [
   /* Rutas Generales */
   { path: 'formacion', component: FormacionComponent },
+  { path: 'logearse', component: AppLoginComponent },
 
-  /* En el caso de no tener una ruta en el url se mostrara lo que hay en la siguiente
-  linea de ruta o path */
+  /* Ruta por default */
   { path: '**', component: MitagComponent }
 ];
 
@@ -32,7 +33,8 @@ const routes: Routes = [
     TopBarComponent,
     MitagComponent,
     FormacionComponent,
-    LapizComponent
+    LapizComponent,
+    AppLoginComponent
   ],
   imports: [
     BrowserModule,
