@@ -1,12 +1,12 @@
 <!-- ESTRUCTURA GENERAL HTML-->
   <body class="container">
 
-    <!--Componente topBar -->
+    <!--topBar -->
     <section id="header" class="">
 
       <app-top-bar></app-top-bar>
 
-      <!--Banner y Foto de perfil como componente hijo-->
+      <!--Banner-->
       <section class="container" id="banner">
         <app-banner></app-banner>
       </section>
@@ -15,26 +15,11 @@
     
     
 
-    <!-- en esta seccion se implementa la dinamica de vistas -->
+    <!-- HOME -->
     <section class="container" id="seccionInformacion">
       
-      <!-- Insertar Componente menu flotante 
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Menu de navegacion
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" routerLink="/formacion">formacion</a>
-          <a class="dropdown-item" routerLink="/mitag">Acerca de mi</a>
-        </div>
-      </div> -->
-      
-      <!-- Ingreso RUTAS Dinamincas-->
       <div class="separador"></div>
       <router-outlet></router-outlet>
-      
-      <div class="separador"></div>
-      <app-formacion></app-formacion>
 
     </section>
 

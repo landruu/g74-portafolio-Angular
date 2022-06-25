@@ -13,15 +13,14 @@ import { MitagComponent } from './presentacion/mitag/mitag.component';
 import { FormacionComponent } from './formacion/formacion.component';
 import { LapizComponent } from './edit/lapiz/lapiz.component';
 import { AppLoginComponent } from './login/app-login/app-login.component';
+import { HomeComponent } from './body/home/home.component';
 
 /* Declaro una constante en donde le asigno una lista de rutas */
 const routes: Routes = [
   /* Rutas Generales */
-  { path: 'formacion', component: FormacionComponent },
   { path: 'logearse', component: AppLoginComponent },
-
-  /* Ruta por default */
-  { path: '**', component: MitagComponent }
+  /* Ruta por default, contiene a todos los elementos del body */
+  { path: '', component: HomeComponent } 
 ];
 
 @NgModule({
@@ -34,7 +33,8 @@ const routes: Routes = [
     MitagComponent,
     FormacionComponent,
     LapizComponent,
-    AppLoginComponent
+    AppLoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
