@@ -6,17 +6,17 @@ import { PortafolioAService } from './servicios/portafolio-a.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit {
   
   title: string = "Titulo en variable";
     
   constructor () {
-  //agregando funciones al componente ;)
-  
+  //agregando funciones al componente.
   }
 
   ngOnInit(): void {
-    // agregar funciones que inien con el componente
+    // agregar funciones que inicien con el componente.
   }
 
 }

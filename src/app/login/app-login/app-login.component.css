@@ -7,12 +7,13 @@
   .form-login {
     width: 400px;
     height: 340px;
-    background: #4e4d4d;
+    background: #0d053fcb;
     margin: auto;
-    box-shadow: 5px 5px 37px rgba(0, 0, 0, 0.466);
+    box-shadow: 5px 5px 37px rgba(19, 18, 18, 0.568);
     padding: 20px 30px;
     border-top: 4px solid #017bab;
     color: white;
+    margin-bottom: 20px;
   }
   
   .form-login h5 {
@@ -29,7 +30,7 @@
     border: 1px solid #017bab;
     margin-bottom: 15px;
     padding: 11px 10px;
-    background: #252323;
+    background: #ffffffe8;
     font-size: 14px;
     font-weight: bold;
   }
@@ -42,19 +43,7 @@
     color: white;
     margin-bottom: 16px;
   }
-  
-  .form-login p{
-    height: 40px;
-    text-align: center;
-    border-bottom: 1px solid;
-  }
-  
-  .form-login a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  
+
   .form-login a:hover {
     text-decoration: underline;
   }

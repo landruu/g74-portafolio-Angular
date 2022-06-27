@@ -5,11 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app-login.component.html',
   styleUrls: ['./app-login.component.css']
 })
+
 export class AppLoginComponent implements OnInit {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
+  
+  ngOnInit(): void { }
 
 }
