@@ -1,17 +1,16 @@
 
-.avatar:hover {
-    border: #eae3f0bb solid 3px;  
-}
-
 .avatar {
+    width: 150px;
     position: absolute;
     top: 26%;
     left: 19%;
     border-radius: 6px 6px 6px 6px;
-    
     border: #198754 solid 3px;
 }
 
+.avatar:hover {
+    border: #eae3f0bb solid 3px;  
+}
 
 @media only screen and (min-width: 400px) and (max-width: 720px) {
 
