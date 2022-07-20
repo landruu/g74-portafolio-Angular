@@ -11,7 +11,7 @@ git config --global user.name "Jolie"
 
 git status #te dice en que estado esta tu repositorio ( en rojo lo que no se hizo commit)
 
-// PRIMERO ADD, agregar todos los cambios al repositorio
+// ADD, agregar todos los cambios al repositorio
 git add prueba1.html #agregamos el archivo al repositorio local
 
 // verifico
@@ -29,7 +29,7 @@ git log
 // si no esta establecida la url del repo. Establecer con este comando.
 git remote add origin "url"
 
-//
+// ESTABLECER BRECH POR PRIMERA VEZ
 git branch -M main
 
 // UPDATE

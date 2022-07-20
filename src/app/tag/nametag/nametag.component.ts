@@ -1,23 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { PortafolioAService } from 'src/app/servicios/portafolio-a.service';
+import { Persona } from 'src/app/model/persona';
+import { PersonaService } from 'src/app/servicios/persona.service';
 
 @Component({
   selector: 'app-nametag',
   templateUrl: './nametag.component.html',
   styleUrls: ['./nametag.component.css']
 })
+
 export class NametagComponent implements OnInit {
 
-  constructor(private datosPortafolio:PortafolioAService) {}
+  persData: Persona[] = [];
 
-  portafolioData:any;
+  constructor(private persServicio: PersonaService) { }
 
-  ngOnInit(): void {
-    this.datosPortafolio.ObtenerDatos().subscribe(data => {
-
-      this.portafolioData= data;
-
+  private extraerData(): void {
+    this.persServicio.ObtenerDatos().subscribe(data => {
+      this.persData = data;
     })
   }
-
+  // Inicializar
+  ngOnInit(): void {
+    this.extraerData()
+  }
 }
