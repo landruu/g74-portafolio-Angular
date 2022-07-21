@@ -10,3 +10,17 @@
     background-color: rgba(0, 0, 0, 0.116);
     border-radius: 5px;
 }
+
+.nametag {
+    text-align: center;
+}
+
+@media only screen and (min-width: 400px) and (max-width: 720px) {
+
+    .nametag span, h2, h4 {
+        display: flex;
+        font-size: 1rem;
+        justify-content: space-between;
+    }
+    
+}

@@ -1,17 +1,19 @@
-<div class="container row d-flex mitag">
-    <div class="col-sm-4">
-      <app-nametag></app-nametag>
-    </div>
-    <div class="col-sm-8">
-        <h3><strong>Acerca de mi</strong></h3>
-        <p>
-          Capacitado para intervenir en las organizaciones, en base a la información y su trato, 
-          con la utilización de métodos que diagnostican problemáticas y ofrecen soluciones en 
-          distintos niveles de aplicación. 
-          Poseo habilidades que refuerzan técnicas que hoy se aplican en los ámbitos del comercio digital 
-          y la tecnología informática, algunos estudios referentes: 
-          <strong *ngFor="let estudio of tagData.estudios">{{estudio.tipo+", "}}</strong>
-          <!--Boton edit-->
-        </p>
-    </div>
+<div class="container row d-flex mitag" *ngFor="let data of persData">
+
+
+  <div class="col-sm-4 nametag">
+    <span>
+      <h2>{{data.nombre}} {{data.apellido}}</h2>
+      <h4>{{data.oficio}}</h4>
+    </span>
+  </div>
+
+  <div class="col-sm-8">
+    <h3><strong>Acerca de mi</strong></h3>
+    <p>
+      {{data.about}}
+      <!--Boton edit-->
+    </p>
+  </div>
+
 </div>

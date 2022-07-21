@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PortafolioAService } from './servicios/portafolio-a.service';
 
 @Component({
   selector: 'app-root',

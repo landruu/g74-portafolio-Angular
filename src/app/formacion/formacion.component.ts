@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PortafolioAService } from '../servicios/portafolio-a.service';
+import { Educacion } from '../model/educacion';
+import { EducacionService } from '../servicios/educacion.service';
 
 @Component({
   selector: 'app-formacion',
@@ -9,17 +10,20 @@ import { PortafolioAService } from '../servicios/portafolio-a.service';
 
 export class FormacionComponent implements OnInit {
 
-  constructor(private datosPortafolio:PortafolioAService) { 
+  constructor(private eduData: EducacionService) {
 
   }
-  
-  formacionData:any;
+
+  formacionData: Educacion[] = [];
+
+  private extraerData(): void {
+    this.eduData.ObtenerDatos().subscribe(data => {
+      this.formacionData = data;
+    })
+  }
 
   ngOnInit(): void {
-    this.datosPortafolio.ObtenerDatos().subscribe(data => {
-      //tomo el objeto json en una variable
-      this.formacionData=data;
-    })
+    this.extraerData();
   }
 
 }

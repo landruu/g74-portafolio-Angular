@@ -1,26 +1,34 @@
 <div class="cardMaster">
 
-    <h3><strong>Formación</strong></h3>
-    <div class="cardChild d-flex" *ngFor="let formacion of formacionData.estudios">
+    <h3><strong>Educación</strong></h3>
 
-        <div class="col-sm-4 iconform">
-            <i><img [src]="formacion.img" alt="formacion academica"></i>
-        </div>
-    
-        
-        <div class="col-sm-8">
-            <div class="row contentForm">
-                <div class="col-sm-4 cardli">
-                    <h6>{{formacion.tipo}}</h6>
-                    <h5>{{formacion.institucion}}</h5>
+    <div class="cardChild d-flex" *ngFor="let formacion of formacionData">
+
+        <div class="container text-center">
+
+            <div class="row">
+
+                <div class="col-sm-3">
+                    <i><img [src]="formacion.logo" alt="formacion academica"></i>
                 </div>
-                <div class="col-sm-7 cardli">
-                    <p>{{formacion.titulo}}</p>
-                    <p>Inicia: {{formacion.start}}</p>
-                    <p>Finaliza: {{formacion.end}}</p>
+                <div class="col-sm-4">
+                    <h6>{{formacion.institucion}}</h6>
+                    <h5>{{formacion.descripcion}}</h5>
+                </div>
+                <div class="col-sm-3">
+                    <p><strong>Duracion:</strong> {{formacion.duracion}}</p>
+                    <p *ngIf="formacion.completo">Logro Completado</p>
+                    <p *ngIf="!formacion.completo">Aún no Completado</p>
+                </div>
+                <!--Se muestra si esta logeado()-->
+                <div class="col-sm-2" *ngIf="true">
+                    <app-lapiz></app-lapiz>
+                    <app-add-btn></app-add-btn>
+                    <app-del-btn></app-del-btn>
                 </div>
             </div>
         </div>
+
     </div>
 
 </div>

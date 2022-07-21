@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core"
-import { PortafolioAService } from "../servicios/portafolio-a.service";
+import { Persona } from "../model/persona";
+import { PersonaService } from "../servicios/persona.service";
 
 @Component({
     selector: 'app-avatar',
@@ -8,14 +9,14 @@ import { PortafolioAService } from "../servicios/portafolio-a.service";
   })
   export class AvatarComponent implements OnInit {
 
-    constructor(private datosPortafolio:PortafolioAService){
+    constructor(private persData:PersonaService){
 
     }
     
-    avatarData:any; // declaro variable para guardar imagen del avatar
+    avatarData: Persona[] = [];
 
     ngOnInit(): void { // procedimiento que guarda datos en variable
-      this.datosPortafolio.ObtenerDatos().subscribe(datos =>{
+      this.persData.ObtenerDatos().subscribe(datos =>{
         this.avatarData=datos;
       });
     }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PortafolioAService } from 'src/app/servicios/portafolio-a.service';
+import { Persona } from 'src/app/model/persona';
+import { PersonaService } from 'src/app/servicios/persona.service';
 
 @Component({
   selector: 'app-mitag',
@@ -8,16 +9,18 @@ import { PortafolioAService } from 'src/app/servicios/portafolio-a.service';
 })
 export class MitagComponent implements OnInit {
 
-  constructor(private datosPortafolio:PortafolioAService) {
+  persData: Persona[] = [];
 
-   }
+  constructor(private persServicio: PersonaService) { }
 
-  tagData:any;
-
-  ngOnInit(): void {
-    this.datosPortafolio.ObtenerDatos().subscribe(data => {
-      this.tagData=data; //tomo el objeto json en una variable
+  private extraerData(): void {
+    this.persServicio.ObtenerDatos().subscribe(data => {
+      this.persData = data;
     })
+  }
+  // Inicializar
+  ngOnInit(): void {
+    this.extraerData()
   }
 
 }

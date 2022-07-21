@@ -1,0 +1,44 @@
+<div class="cardMaster">
+
+    <h3><strong>Hard & Soft-Skills</strong></h3>
+
+    <div class="cardChild d-flex">
+
+        <div class="container">
+
+            <table class="table">
+
+                <thead>
+                    <tr>
+                        <th scope="col-sm-3">Nombre</th>
+                        <th scope="col-sm-5">Descripción</th>
+                        <th scope="col-sm-4">Avance</th>
+                    </tr>
+                </thead>
+
+                <tbody *ngFor="let skills of habilidadesData">
+                    <tr>
+                        <td class="col-sm-3">{{skills.nombre}}</td>
+                        <td class="col-sm-5">{{skills.descripcion}}</td>
+                        <td class="col-sm-4">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width:{{skills.avance}}%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{skills.avance}}%</div>
+                            </div>
+                            <div class="">
+                                <app-lapiz></app-lapiz>
+                                <app-add-btn></app-add-btn>
+                                <app-del-btn></app-del-btn>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

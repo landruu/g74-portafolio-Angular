@@ -1,0 +1,12 @@
+.footerStyle  {
+    padding: 20px;
+}
+.footerStyle div {
+    color: #198754;
+    font-size: 12px;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+}
