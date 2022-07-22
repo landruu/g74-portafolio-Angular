@@ -1,12 +1,28 @@
-<section class="form-login">
-    
+<form [formGroup]="form" class="form-login">
+
     <h5>Login</h5>
 
-    <input class="controls" type="text" name="usuario" placeholder="Usuario">
-    <input class="controls" type="password" name="contrasena" placeholder="Contraseña">
+    <input class="controls" type="email" placeholder="Usuario" formControlName="email">
+    <div *ngIf="Email?.hasError && Email?.touched">
+        <p *ngIf="Email?.hasError('required')" class="text-danger">
+            El mail es requerido.
+        </p>
+        <p *ngIf="Email?.hasError('email')" class="text-danger">
+            El formato de mail debe ser válido.
+        </p>
+    </div>
+    <input class="controls" type="password" placeholder="Contraseña" formControlName="password">
+    <div *ngIf="Password?.hasError && Password?.touched">
+        <p *ngIf="Password?.hasError('required')" class="text-danger">
+            El Password es requerido.
+        </p>
+        <p *ngIf="Password?.hasError" class="text-danger">
+            El password debe al menos contener 8 caracteres.
+        </p>
+    </div>
 
     <input class="buttons" type="submit" name="" value="Ingresar">
 
     <p><a href="#">¿Olvidastes tu Contraseña?</a></p>
 
-</section>
+</form>

@@ -14,12 +14,12 @@
 
                         <h5 class="card-title"><strong>{{project.nombre}}</strong></h5>
                         <p class="card-text">
-                            Iniciado: {{project.iniciado}}
+                            {{project.iniciado}}<br>
                             <strong>Descripcion<br></strong>
                             {{project.descripcion}}
                         </p>
                         <button type="button" class="btn btn-primary p-1">
-                            <a href="project.link" class="btn btn-primary">
+                            <a href="{{project.link}}" class="btn btn-primary">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-eye" viewBox="0 0 16 16">
                                     <path

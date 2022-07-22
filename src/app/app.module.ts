@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router'; /* importo libreria de rutas */
-
+/* Importar componentes */
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BannerComponent } from './banner/banner.component';
@@ -19,6 +19,7 @@ import { ExperienciaComponent } from './experiencia/experiencia/experiencia.comp
 import { SkillComponent } from './skill/skill.component';
 import { ProyectoComponent } from './proyecto/proyecto.component';
 import { FooterComponent } from './footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 /* Declaro una constante en donde le asigno una lista de rutas */
 const routes: Routes = [
@@ -51,6 +52,7 @@ const routes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
+    ReactiveFormsModule,
   ],
   exports: [RouterModule],
   providers: [],
