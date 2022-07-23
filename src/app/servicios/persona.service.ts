@@ -9,11 +9,26 @@ import { Persona } from '../model/persona';
 
 export class PersonaService {
 
-  url = 'http://localhost:8080/usuario/ver'
+  url = 'http://localhost:8080/usuario'
 
   constructor(private httpVar: HttpClient) { }
 
   ObtenerDatos():Observable<Persona[]> {
-    return this.httpVar.get<Persona[]>(`${this.url}`);
+    return this.httpVar.get<Persona[]>(`${this.url}/ver`);
   }
+
+    // Crear Exp
+    public save(persons: Persona): Observable<any>{
+      return this.httpVar.post<any>(this.url + '/crear', persons);
+    }
+  
+    // UpDate
+    public update(id: number, persons:Persona): Observable<any>{
+      return this.httpVar.put<any>(this.url + `/editar/${id}`, persons);
+    }
+  
+    // Delete
+    public delete(id: number): Observable<any>{
+      return this.httpVar.delete<any>(this.url + `/borrar/${id}`)
+    }
 }

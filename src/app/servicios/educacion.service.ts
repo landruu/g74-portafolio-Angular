@@ -16,4 +16,19 @@ export class EducacionService {
   ObtenerDatos():Observable<Educacion[]> {
     return this.httpVar.get<Educacion[]>(`${this.url}/ver`);
   }
+
+    // Crear Exp
+    public save(education: Educacion): Observable<any>{
+      return this.httpVar.post<any>(this.url + '/crear', education);
+    }
+  
+    // UpDate
+    public update(id: number, education:Educacion): Observable<any>{
+      return this.httpVar.put<any>(this.url + `/editar/${id}`, education);
+    }
+  
+    // Delete
+    public delete(id: number): Observable<any>{
+      return this.httpVar.delete<any>(this.url + `/borrar/${id}`)
+    }
 }

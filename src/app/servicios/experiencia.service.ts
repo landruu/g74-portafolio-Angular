@@ -12,7 +12,24 @@ export class ExperienciaService {
 
   constructor(private httpVar: HttpClient) { }
 
+  // Obtener datos
   ObtenerDatos():Observable<Experiencia[]> {
     return this.httpVar.get<Experiencia[]>(`${this.url}/ver`);
   }
+
+  // Crear Exp
+  public save(experiencia: Experiencia): Observable<any>{
+    return this.httpVar.post<any>(this.url + '/crear', experiencia);
+  }
+
+  // UpDate
+  public update(id: number, experiencia:Experiencia): Observable<any>{
+    return this.httpVar.put<any>(this.url + `/editar/${id}`, experiencia);
+  }
+
+  // Delete
+  public delete(id: number, experiencia:Experiencia): Observable<any>{
+    return this.httpVar.delete<any>(this.url + `/borrar/${id}`)
+  }
+  
 }
