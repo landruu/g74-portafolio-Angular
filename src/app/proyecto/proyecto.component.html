@@ -6,7 +6,7 @@
 
         <div class="container text-center">
 
-            <div class="row ">
+            <div class="row">
 
                 <div class="card" style="width: 18rem;" *ngFor="let project of proyectoData">
 
@@ -15,9 +15,10 @@
                         <h5 class="card-title"><strong>{{project.nombre}}</strong></h5>
                         <p class="card-text">
                             {{project.iniciado}}<br>
-                            <strong>Descripcion<br></strong>
-                            {{project.descripcion}}
+                            <strong>Descripcion</strong>
                         </p>
+                        <p style="font-size: 14px; text-align: justify;">{{project.descripcion}}</p>
+                        <br>
                         <button type="button" class="btn btn-primary p-1">
                             <a href="{{project.link}}" class="btn btn-primary">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

@@ -1,11 +1,13 @@
 * {
     margin: 0;
     padding: 0;
-  }
+}
 
 .iconform img {
     border-radius: 50px;
-  }
+    width: 70px;
+    height: 70px;
+}
 
 .contentForm {
     justify-content: space-between;
@@ -45,10 +47,7 @@
         align-items: flex-end;
         align-items: center;
     }
-    .iconform img {
-        height: 50%;
-        width: 50%;
-      }
+
     .cardMaster h3 {
         padding-left: 0px;
         text-align: center;

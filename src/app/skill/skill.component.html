@@ -18,8 +18,8 @@
 
                 <tbody *ngFor="let skills of habilidadesData">
                     <tr>
-                        <td class="col-sm-3">{{skills.nombre}}</td>
-                        <td class="col-sm-5">{{skills.descripcion}}</td>
+                        <td class="col-sm-3"><strong>{{skills.nombre}}</strong></td>
+                        <td class="col-sm-5" style="font-size: 14px;">{{skills.descripcion}}</td>
                         <td class="col-sm-4">
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" style="width:{{skills.avance}}%"

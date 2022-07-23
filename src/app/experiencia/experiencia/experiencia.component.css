@@ -36,6 +36,11 @@
     background-color: rgba(0, 0, 0, 0.116);
     border-radius: 5px;
 }
+.iconform img {
+    border-radius: 50px;
+    width: 70px;
+    height: 70px;
+}
 
 @media only screen and (min-width: 400px) and (max-width: 720px) {
 
@@ -45,10 +50,6 @@
         align-items: flex-end;
         align-items: center;
     }
-    .iconform img {
-        height: 50%;
-        width: 50%;
-      }
     .cardMaster h3 {
         padding-left: 0px;
         text-align: center;

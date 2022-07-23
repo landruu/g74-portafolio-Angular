@@ -1,28 +1,23 @@
-<form [formGroup]="form" class="form-login">
+<form [formGroup]="form" class="form-login" (ngSubmit)="onEviar($event)">
 
     <h5>Login</h5>
 
     <input class="controls" type="email" placeholder="Usuario" formControlName="email">
     <div *ngIf="Email?.hasError && Email?.touched">
-        <p *ngIf="Email?.hasError('required')" class="text-danger">
-            El mail es requerido.
+        <p *ngIf="Email?.hasError('required')" class="text-danger" style="font-size: 12px;">
+            * Campo requerido
         </p>
-        <p *ngIf="Email?.hasError('email')" class="text-danger">
-            El formato de mail debe ser válido.
+        <p *ngIf="Email?.hasError('email')" class="text-danger" style="font-size: 12px;">
+            Debes ingresar un mail valido
         </p>
     </div>
     <input class="controls" type="password" placeholder="Contraseña" formControlName="password">
     <div *ngIf="Password?.hasError && Password?.touched">
-        <p *ngIf="Password?.hasError('required')" class="text-danger">
-            El Password es requerido.
-        </p>
-        <p *ngIf="Password?.hasError" class="text-danger">
-            El password debe al menos contener 8 caracteres.
+        <p *ngIf="Password?.hasError('required')" class="text-danger" style="font-size: 12px;">
+            * Password requerido.
         </p>
     </div>
 
     <input class="buttons" type="submit" name="" value="Ingresar">
-
-    <p><a href="#">¿Olvidastes tu Contraseña?</a></p>
 
 </form>

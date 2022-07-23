@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Route, Router } from '@angular/router';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 
 @Component({
   selector: 'app-login',
@@ -12,19 +14,11 @@ export class AppLoginComponent implements OnInit {
   form:FormGroup;
   formBuilder: any;
 
-  constructor(formBuilder: FormBuilder) {
+  constructor(formBuilder: FormBuilder, private autenticacionService:AutenticacionService, private ruta:Router) {
     this.form = formBuilder.group (
       {
-        // PRESS CNTRL+K+C TO DESBLOCK
-
-        // email: ['', [Validators.required, Validators.email]],
-        // password: ['', [Validators.required, Validators.minLength(8)]],
-        // diviceInfo: this.formBuilder.group({
-        //   diviceid: ["12345678998"],
-        //   diviceType: ["DIVICE_TYPE_ANDROID"],
-        //   noticationToken: ["45612378asddsa34"]
-        // })
-
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required, Validators.minLength(8)]]
       }
     )
   }
@@ -39,6 +33,15 @@ export class AppLoginComponent implements OnInit {
 
   get Password(){
     return this.form.get('password');
+  }
+
+  onEviar(event:Event)
+  {
+    event.preventDefault;
+    this.autenticacionService.iniciarSession(this.form.value).subscribe(data => {
+      console.log("DATA: " + JSON.stringify(data));
+      this.ruta.navigate(['/'])
+    })
   }
 
 }
