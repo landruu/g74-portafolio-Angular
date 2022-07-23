@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'; // Agrego FormModule
 import { RouterModule, Routes } from '@angular/router'; /* importo libreria de rutas */
 /* Importar componentes */
 import { AppRoutingModule } from './app-routing.module';
@@ -26,7 +27,7 @@ const routes: Routes = [
   /* Rutas Generales */
   { path: 'logearse', component: AppLoginComponent },
   /* Ruta por default, contiene a todos los elementos del body */
-  { path: '', component: HomeComponent } 
+  { path: '', component: HomeComponent },
 ];
 
 @NgModule({
@@ -53,6 +54,7 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes),
     ReactiveFormsModule,
+    FormsModule,
   ],
   exports: [RouterModule],
   providers: [],

@@ -28,7 +28,7 @@ export class ExperienciaService {
   }
 
   // Delete
-  public delete(id: number, experiencia:Experiencia): Observable<any>{
+  public delete(id: number): Observable<any>{
     return this.httpVar.delete<any>(this.url + `/borrar/${id}`)
   }
   

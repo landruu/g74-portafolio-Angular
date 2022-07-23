@@ -1,7 +1,5 @@
-<div class="cardMaster">
-
+<div class="cardMaster" *ngIf="vistaNormal">
     <h3><strong>Experiencia</strong></h3>
-
     <div class="cardChild d-flex" *ngFor="let experiencia of experienciaData">
 
         <div class="container text-center">
@@ -17,15 +15,76 @@
                     <p><strong>Desde: </strong>{{experiencia.alta}}</p>
                     <p>{{experiencia.baja}}</p>
                 </div>
-                <!--Se muestra si esta logeado()-->
-                <div class="col-sm-2">
+                <!--Mostrar solo si esta logeado()-->
+                <div class="col-sm-2" id="interactiveBtns">
                     <app-lapiz></app-lapiz>
-                    <app-add-btn></app-add-btn>
-                    <app-del-btn></app-del-btn>
+                    <div id="addBtn">
+                        <a (click)="switchToadd()" class="btn btn-octicon float-right p-2" aria-label="Add this file">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div id="delBtn">
+                        <a (click)="delete(experiencia.id)" class="btn btn-octicon float-right p-2" aria-label="Add this file">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
-
 </div>
+
+<!-- SECCION PARA EDITAR O AGREGAR -->
+<section class="cardMaster" *ngIf="vistaAdd">
+    <h3><strong>Nueva Experiencia</strong></h3>
+
+    <form class="cardChild" (ngSubmit)="addExperiencia()">
+
+        <label for="newName" class="form-label">Empresa</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="newName" name="newName"
+            [(ngModel)]="newName" required>
+        </div>
+        
+        <label for="newLogo" class="form-label">Url del logo </label>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3"></span>
+            <input type="text" class="form-control" id="newLogo" name="newLogo"
+            [(ngModel)]="newLogo" required>
+        </div>
+        
+        <label for="newDesc" class="form-label">Descripcion </label>
+        <div class="input-group">
+            <input type="text" class="form-control" id="newDesc" name="newDesc"
+            [(ngModel)]="newDesc" required>
+        </div>
+        
+        <div class="d-flex">
+            <div class="col-sm-3" style="margin-right: 10px;">
+                <label for="newAlta" class="form-label">Alta</label><br>
+                <input type="date" class="form-control" id="newAlta" name="newAlta"
+                [(ngModel)]="newAlta" required>
+            </div>
+
+            <div class="col-sm-3" style="margin-left: 10px;">
+                <label for="newBaja" class="form-label">Baja</label><br>
+                <input type="date" class="form-control" id="newBaja" name="newBaja"
+                [(ngModel)]="newBaja" required>
+            </div>
+        </div>
+        <div style="margin-top: 5px;">
+            <button (click)="defaultVist()" type="button" style="margin-right: 5px; padding: 5px;" class="btn btn-secondary">Volver</button>
+            <button (click)="addExperiencia()" type="button" style="padding: 5px;" class="btn btn-primary">Agregar</button>
+        </div>
+
+    </form>
+
+</section>
