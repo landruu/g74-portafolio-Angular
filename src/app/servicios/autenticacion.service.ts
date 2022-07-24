@@ -1,27 +1,36 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { Usuario } from '../model/usuario';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AutenticacionService {
 
-  url = 'localhost:8080/login';
-  currentuserSubjet: BehaviorSubject<any>;
+  url = 'localhost:8080/app/login';
 
-  constructor(private http:HttpClient) { 
-    console.log("El Servicio de autenticación: OK");
-    this.currentuserSubjet = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentuser') || '{}'))
+  constructor(private http:HttpClient) {}
+
+  // autenticar
+  public login(credenciales: Usuario): Observable<Boolean> {
+    return this.http.post<Boolean>(this.url, credenciales).pipe(
+      tap((response:Boolean)=>{
+        if (response) {
+          sessionStorage.setItem("user", "andres")
+        }
+      })
+    );
   }
 
-  iniciarSession(credenciales:any):Observable<any>
-  {
-    return this.http.post(this.url, credenciales).pipe(map(data =>{
+  //Deslogear
+  public logout(){
+    sessionStorage.removeItem("user");
+  }
 
-      sessionStorage.setItem('currentUser', JSON.stringify(data));
-      return data;
-    }))
+  //Logearse
+  public isUserLogged(): Boolean {
+    return sessionStorage.getItem("user") !== null;
   }
 }

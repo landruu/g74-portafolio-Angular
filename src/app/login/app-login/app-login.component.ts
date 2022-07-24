@@ -11,11 +11,11 @@ import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 
 export class AppLoginComponent implements OnInit {
 
-  form:FormGroup;
+  form: FormGroup;
   formBuilder: any;
 
-  constructor(formBuilder: FormBuilder, private autenticacionService:AutenticacionService, private ruta:Router) {
-    this.form = formBuilder.group (
+  constructor(formBuilder: FormBuilder, private autenticacionService: AutenticacionService, private ruta: Router) {
+    this.form = formBuilder.group(
       {
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(8)]]
@@ -24,24 +24,27 @@ export class AppLoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
   }
 
-  get Email(){
+  ngOnSumit(event: Event){
+    event.preventDefault;
+
+    this.autenticacionService.login(this.form.value).subscribe(
+      (Response: Boolean) => {
+        if (Response) {
+          alert('validado')
+          //this.ruta.navigate([''])
+        }
+      }
+    )
+  };
+
+  get Email() {
     return this.form.get('email');
   }
 
-  get Password(){
+  get Password() {
     return this.form.get('password');
-  }
-
-  onEviar(event:Event)
-  {
-    event.preventDefault;
-    this.autenticacionService.iniciarSession(this.form.value).subscribe(data => {
-      console.log("DATA: " + JSON.stringify(data));
-      this.ruta.navigate(['/'])
-    })
   }
 
 }
