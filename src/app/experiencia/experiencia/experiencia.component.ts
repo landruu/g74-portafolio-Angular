@@ -31,7 +31,6 @@ export class ExperienciaComponent implements OnInit {
 
   ngOnInit(): void {
     this.extraerData();
-    //this.preEdit();
   }
 
   //Extraigo datos
@@ -55,6 +54,8 @@ export class ExperienciaComponent implements OnInit {
 
 
   switchToEdit(id: number) {
+
+    this.expEdit = this.experienciaData.find(element => element.id === id);
     this.vistaNormal = false;
     this.vistaEdit = true;
     this.preEdit(id);
@@ -91,17 +92,24 @@ export class ExperienciaComponent implements OnInit {
   }
 
   // Pre-Edit
-  preEdit(id:number) {
+  preEdit(id: number) {
     this.expData.detail(id).subscribe(data => {
       this.expEdit = data;
-    }, err => {
+    }, () => {
       alert('Algo No ha salido bien');
     })
+    // let nowYear = new Date().getUTCFullYear();
+    // let nowMonth = new Date().getFullYear();
+    // let nowDay = new Date().getDay();
+
+    // let regDate = this.expEdit.baja;
+    // console.log(nowYear.toString()+ '-' + nowMonth.toString() + '-' + nowDay.toString());
+    // console.log(regDate);
   }
 
   // Edit
-  editar(id: number) {  
-    
+  editar(id: number) {
+
     // Deshabilito el boton para evitar errores.
     let disableBtn = document.getElementById('expEdit.id');
     disableBtn.setAttribute('disabled', 'true');
@@ -109,7 +117,7 @@ export class ExperienciaComponent implements OnInit {
     this.expData.update(id, this.expEdit).subscribe(data => {
       this.expEdit = data;
       location.reload();
-    }, err => {
+    }, () => {
       alert('Algo No ha salido bien');
     })
   }

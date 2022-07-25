@@ -27,6 +27,7 @@ export class MitagComponent implements OnInit {
   // Inicializar
   ngOnInit(): void {
     this.extraerData()
+    this.preEdit();
   }
 
   // Shwicheo vistas
@@ -37,7 +38,6 @@ export class MitagComponent implements OnInit {
   switchToEdit() {
     this.vistaNormal = false;
     this.vistaEdit = true;
-    this.preEdit();
   }
 
   // Pre-Edit
@@ -45,7 +45,6 @@ export class MitagComponent implements OnInit {
     let id = 1;
     this.persServicio.detail(id).subscribe(data => {
       this.persEdit = data;
-      console.log(this.persEdit)
     }, err => {
       alert('Algo No ha salido bien');
     })
@@ -57,7 +56,6 @@ export class MitagComponent implements OnInit {
     let disableBtn = document.getElementById('expEdit.id');
     disableBtn.setAttribute('disabled', 'true');
 
-    console.log(this.persEdit)
     let id = 1;
     this.persServicio.update(id, this.persEdit).subscribe(data => {
       this.persEdit = data;
