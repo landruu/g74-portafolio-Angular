@@ -12,7 +12,7 @@
     </div>
 
     <div class="cardChild d-flex" *ngFor="let experiencia of experienciaData">
-
+ 
         <div class="container text-center">
             <div class="row iconform">
                 <div class="col-sm-3">
@@ -30,7 +30,7 @@
                 <div class="col-sm-2" id="interactiveBtns">
                     <!-- EDIT BTN -->
                     <div id="editBtn">
-                        <a class="btn btn-octicon float-right p-2" aria-label="Edit this file"><svg
+                        <a (click)="switchToEdit(experiencia.id)" class="btn btn-octicon float-right p-2" aria-label="Edit this file"><svg
                                 aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16"
                                 data-view-component="true" class="octicon octicon-pencil" style="color: rgba(17, 0, 255, 0.61);">
                                 <path fill-rule="evenodd"
@@ -55,11 +55,11 @@
     </div>
 </div>
 
-<!-- SECCION PARA EDITAR O AGREGAR -->
+<!-- SECCION PARA AGREGAR -->
 <section class="cardMaster" *ngIf="vistaAdd">
     <h3><strong>Nueva Experiencia</strong></h3>
 
-    <form class="cardChild" (ngSubmit)="addExperiencia()">
+    <form class="cardChild">
 
         <label for="newName" class="form-label">Empresa</label>
         <div class="input-group mb-3">
@@ -91,8 +91,52 @@
         <div style="margin-top: 5px;">
             <button (click)="defaultVist()" type="button" style="margin-right: 5px; padding: 5px;"
                 class="btn btn-secondary">Volver</button>
-            <button (click)="addExperiencia()" type="button" style="padding: 5px;"
+            <button id="addExpBtn" (click)="addExperiencia()" type="button" style="padding: 5px;"
                 class="btn btn-primary">Agregar</button>
+        </div>
+
+    </form>
+
+</section>
+
+<!-- SECCION PARA EDITAR -->
+<section class="cardMaster" *ngIf="vistaEdit">
+    <h3><strong>Editar Experiencia</strong></h3>
+
+    <form class="cardChild"> 
+
+        <label for="newName" class="form-label">Empresa</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="newName" name="newName" [(ngModel)]="expEdit.nombre" required>
+        </div>
+
+        <label for="newLogo" class="form-label">Url del logo </label>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3"></span>
+            <input type="text" class="form-control" id="newLogo" name="newLogo" [(ngModel)]="expEdit.logo" required>
+        </div>
+
+        <label for="newDesc" class="form-label">Descripcion </label>
+        <div class="input-group">
+            <input style="height: 50px;" type="text" class="form-control" id="newDesc" name="newDesc" [(ngModel)]="expEdit.descripcion" required>
+        </div>
+
+        <div class="d-flex">
+            <div class="col-sm-3" style="margin-right: 10px;">
+                <label for="newAlta" class="form-label">Alta</label><br>
+                <input type="date" class="form-control" id="newAlta" name="newAlta" [(ngModel)]="expEdit.alta" required>
+            </div>
+
+            <div class="col-sm-3" style="margin-left: 10px;">
+                <label for="newBaja" class="form-label">Baja</label><br>
+                <input type="date" class="form-control" id="newBaja" name="newBaja" [(ngModel)]="expEdit.baja" required>
+            </div>
+        </div>
+        <div style="margin-top: 5px;">
+            <button (click)="defaultVist()" type="button" style="margin-right: 5px; padding: 5px;"
+                class="btn btn-secondary">Volver</button>
+            <button id="expEdit.id" (click)="editar(expEdit.id)" type="button" style="padding: 5px;"
+                class="btn btn-primary">Editar</button>
         </div>
 
     </form>
