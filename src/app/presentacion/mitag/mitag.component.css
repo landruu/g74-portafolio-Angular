@@ -2,6 +2,7 @@
     align-items: center;
     text-align: center;
     font-size: small;
+    position: relative;
 }
 
 .mitag h3 {
@@ -13,6 +14,12 @@
 
 .nametag {
     text-align: center;
+}
+#editBtn {
+    align-items: left;
+    text-align: left;
+    position: absolute;
+
 }
 
 @media only screen and (min-width: 400px) and (max-width: 720px) {

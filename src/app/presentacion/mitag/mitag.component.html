@@ -1,19 +1,68 @@
-<div class="container row d-flex mitag" *ngFor="let data of persData">
+<div class="container mitag" *ngIf="vistaNormal">
 
+  <div *ngFor="let data of persData" class="row">
+    <div class="col-sm-4 nametag">
+      <span>
+        <h2>{{data.nombre}} {{data.apellido}}</h2>
+        <h4 style="font-size: 14px;">{{data.oficio}}</h4>
+      </span>
+    </div>
 
-  <div class="col-sm-4 nametag">
-    <span>
-      <h2>{{data.nombre}} {{data.apellido}}</h2>
-      <h4 style="font-size: 14px;">{{data.oficio}}</h4>
-    </span>
+    <div class="col-sm-8" style="position: relative;">
+      <h3><strong>Acerca de mi</strong>
+
+      </h3>
+      <p style="font-size: 14px;">
+        {{data.about}}
+        <!--Boton edit-->
+      </p>
+    </div>
   </div>
 
-  <div class="col-sm-8">
-    <h3><strong>Acerca de mi</strong></h3>
-    <p style="font-size: 14px;">
-      {{data.about}}
-      <!--Boton edit-->
-    </p>
-  </div>
+  <button class="btn-primary" (click)="switchToEdit()">
+    edit
+  </button>
 
+</div>
+
+<!-- Seccion Para editar informacion Personal -->
+<div class="container row d-flex mitag" *ngIf="vistaEdit">
+  <div *ngFor="let data of persData">
+    <h3><strong>Editar Datos personales</strong></h3>
+    <form class="cardChild">
+      <div class="row">
+        <div class="col-sm-3" style="margin-right: 20px;">
+          <label for="newAlta" class="form-label">Nombre</label><br>
+          <input type="text" class="form-control" id="editname" name="editname" required [(ngModel)]="persEdit.nombre">
+        </div>
+        <div class="col-sm-3" style="margin-right: 20px;">
+          <label for="newAlta" class="form-label">Apellido</label><br>
+          <input type="text" class="form-control" id="editApellido" name="editApellido" required
+            [(ngModel)]="persEdit.apellido">
+        </div>
+        <div class="col-sm-3" style="margin-right: 20px;">
+          <label for="newAlta" class="form-label">Oficio</label><br>
+          <input type="text" class="form-control" id="editOficio" name="editOficio" required
+            [(ngModel)]="persEdit.oficio">
+        </div>
+      </div>
+
+      <label for="newLogo" class="form-label">Foto de perfil </label>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="editAvatr" name="editAvatr" required [(ngModel)]="persEdit.avatar">
+      </div>
+      <label for="newDesc" class="form-label">Sobre mi </label>
+      <div class="input-group">
+        <input style="height: 80px;" type="text" class="form-control" id="editAbout" name="editAbout" required
+          [(ngModel)]="persEdit.about">
+      </div>
+
+      <div style="margin-top: 5px;">
+        <button (click)="defaultVist()" type="button" style="margin-right: 5px; padding: 5px;"
+          class="btn btn-secondary">Volver</button>
+        <button (click)="editar()" id="expEdit.id" type="button" style="padding: 5px;"
+          class="btn btn-primary">Editar</button>
+      </div>
+    </form>
+  </div>
 </div>

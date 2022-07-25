@@ -1,13 +1,11 @@
 * {
     margin: 0;
     padding: 0;
-}
+  }
 
 .iconform img {
     border-radius: 50px;
-    width: 70px;
-    height: 70px;
-}
+  }
 
 .contentForm {
     justify-content: space-between;
@@ -19,6 +17,7 @@
     margin-bottom: 20px;
     border-radius: 20px;
     border: 1px solid;
+    position: relative;
 }
 
 .cardMaster:hover {
@@ -38,16 +37,40 @@
     background-color: rgba(0, 0, 0, 0.116);
     border-radius: 5px;
 }
+.iconform img {
+    border-radius: 50px;
+    width: 70px;
+    height: 70px;
+}
+#addBtn a {
+    position: absolute;
+    right: 85px;
+    top: 5px;
+    color: rgb(17, 0, 255);
+}
 
 @media only screen and (min-width: 400px) and (max-width: 720px) {
 
     /* Diseños Responsivos*/
+    .cardMaster {
+        padding: 5px;
+        margin: 0px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        border: 1px solid;
+        position: relative;
+    }
+    #addBtn a {
+        position: absolute;
+        right: 15px;
+        top: 0px;
+        color: rgb(17, 0, 255);
+    }
     .cardChild {
         padding: 10px;
         align-items: flex-end;
         align-items: center;
     }
-
     .cardMaster h3 {
         padding-left: 0px;
         text-align: center;

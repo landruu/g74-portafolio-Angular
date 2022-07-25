@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Experiencia } from 'src/app/model/experiencia';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 
@@ -12,7 +11,7 @@ import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 
 export class ExperienciaComponent implements OnInit {
 
-  constructor(public expData: ExperienciaService, private activatedRouter: ActivatedRoute) { }
+  constructor(public expData: ExperienciaService) { }
 
 
 
@@ -27,7 +26,6 @@ export class ExperienciaComponent implements OnInit {
   newBaja: String = '';
 
   expEdit: Experiencia = null;
-  setID: number = 0;
 
   experienciaData: Experiencia[] = [];
 
@@ -60,7 +58,6 @@ export class ExperienciaComponent implements OnInit {
     this.vistaNormal = false;
     this.vistaEdit = true;
     this.preEdit(id);
-    //this.setID = id;
   }
 
   //agregar 
@@ -82,7 +79,6 @@ export class ExperienciaComponent implements OnInit {
 
   // Borrar
   delete(id?: number) {
-
     this.defaultVist();
     if (id != undefined) {
       this.expData.delete(id).subscribe(() => {
