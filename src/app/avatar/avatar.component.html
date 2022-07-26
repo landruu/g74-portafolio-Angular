@@ -1,3 +1,7 @@
-<div class="Style-title" *ngFor="let verAvatar of avatarData">
-    <img [src]="verAvatar.avatar" id="avatar" alt="Programador web Full Stack" class="avatar img-fluid"/>
+<div id="perfilImg" class="Style-title" *ngFor="let verAvatar of avatarData">
+
+    <picture>
+        <img [src]="verAvatar.avatar" id="avatar" alt="Programador web Full Stack" class="avatar img-fluid"/>
+    </picture>
+
 </div>

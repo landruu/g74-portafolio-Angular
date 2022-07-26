@@ -6,21 +6,29 @@
     left: 19%;
     border-radius: 6px;
     border: #198754 solid 3px;
+    background-size: contain;
 }
 
 .avatar:hover {
     border: #eae3f0bb solid 3px;  
 }
 
-@media only screen and (min-width: 400px) and (max-width: 720px) {
+#container {
+    width: 70%;
+    margin: 0 auto;
+    height: 500px;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 1080px) {
 
     /* Diseño Responsivo */
 
     .avatar {
         transition-duration: 1500ms;
         /*display: none;*/
-        top: 16%;
+        top: 10%;
         width: 15%;
         height: 10%;
+        background-size: contain;
     }
 }

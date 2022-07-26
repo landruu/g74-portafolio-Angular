@@ -24,7 +24,6 @@ export class ExperienciaComponent implements OnInit {
   newDesc: String = '';
   newAlta: String = '';
   newBaja: String = '';
-
   expEdit: Experiencia = null;
 
   experienciaData: Experiencia[] = [];
@@ -51,8 +50,6 @@ export class ExperienciaComponent implements OnInit {
     this.vistaNormal = false;
     this.vistaAdd = true;
   }
-
-
   switchToEdit(id: number) {
 
     this.expEdit = this.experienciaData.find(element => element.id === id);
@@ -61,14 +58,32 @@ export class ExperienciaComponent implements OnInit {
     this.preEdit(id);
   }
 
+  // Control automatico: Actualmente Activo
+  disableDateAdd() {
+    let check = document.getElementById('dateAdd');
+    check.setAttribute('disabled', 'true');
+  }
+  disableDateEdit() {
+    let check = document.getElementById('dateEdit');
+    check.setAttribute('disabled', 'true');
+  }
+
   //agregar 
   addExperiencia() {
 
-    // Deshabilito el boton para evitar errores.
+    // Deshabilito el boton Agregar para evitar errores de envíos
     let disableBtn = document.getElementById('addExpBtn');
     disableBtn.setAttribute('disabled', 'true');
 
+    // Instancio el nuevo Objeto
     const Newexp = new Experiencia(this.newName, this.newLogo, this.newDesc, this.newAlta, this.newBaja);
+
+    // Controlo si esta queriendo agregar una experiencia actual
+    if (Newexp.baja == null) {
+      Newexp.baja = 'Actualmente Activo';
+    }
+
+    // Uso el servicio para guardar el nuevo objeto
     this.expData.save(Newexp).subscribe(() => {
       this.defaultVist();
       location.reload();
@@ -93,18 +108,13 @@ export class ExperienciaComponent implements OnInit {
 
   // Pre-Edit
   preEdit(id: number) {
+
     this.expData.detail(id).subscribe(data => {
       this.expEdit = data;
     }, () => {
       alert('Algo No ha salido bien');
     })
-    // let nowYear = new Date().getUTCFullYear();
-    // let nowMonth = new Date().getFullYear();
-    // let nowDay = new Date().getDay();
 
-    // let regDate = this.expEdit.baja;
-    // console.log(nowYear.toString()+ '-' + nowMonth.toString() + '-' + nowDay.toString());
-    // console.log(regDate);
   }
 
   // Edit
@@ -113,6 +123,12 @@ export class ExperienciaComponent implements OnInit {
     // Deshabilito el boton para evitar errores.
     let disableBtn = document.getElementById('expEdit.id');
     disableBtn.setAttribute('disabled', 'true');
+
+    // Controlar si se modifica una baja pre-asignada por un valor actual.
+    let check = document.getElementById('dateEdit');
+    if (check != null ) {
+      this.expEdit.baja = 'Actualmente Activo';
+    }
 
     this.expData.update(id, this.expEdit).subscribe(data => {
       this.expEdit = data;

@@ -24,7 +24,7 @@
                 </div>
                 <div class="col-sm-3">
                     <p><strong>Desde: </strong>{{experiencia.alta}}</p>
-                    <p>{{experiencia.baja}}</p>
+                    <p><strong>Hasta: </strong>{{experiencia.baja}}</p>
                 </div>
                 <!--Mostrar solo si esta logeado()-->
                 <div class="col-sm-2" id="interactiveBtns">
@@ -85,7 +85,11 @@
 
             <div class="col-sm-3" style="margin-left: 10px;">
                 <label for="newBaja" class="form-label">Baja</label><br>
-                <input type="date" class="form-control" id="newBaja" name="newBaja" [(ngModel)]="newBaja" required>
+                <input type="date" class="form-control" id="dateAdd" name="newBaja" [(ngModel)]="newBaja" required>
+            </div>
+            <div class="col-sm-3" style="margin-left: 10px; margin-top: 5px;">
+                <label class="form-check-label" for="complit">Actualidad</label><br>
+                <input (click)="disableDateAdd()" class="form-check-input complit" type="checkbox" name="complit" id="complit">
             </div>
         </div>
         <div style="margin-top: 5px;">
@@ -129,7 +133,11 @@
 
             <div class="col-sm-3" style="margin-left: 10px;">
                 <label for="newBaja" class="form-label">Baja</label><br>
-                <input type="date" class="form-control" id="newBaja" name="newBaja" [(ngModel)]="expEdit.baja" >
+                <input type="date" class="form-control" id="dateEdit" name="newBaja" [(ngModel)]="expEdit.baja" >
+            </div>
+            <div class="col-sm-3" style="margin-left: 10px; margin-top: 5px;">
+                <label class="form-check-label" for="complit">Actualidad</label><br>
+                <input (click)="disableDateEdit()" class="form-check-input" type="checkbox" name="complit" id="complit">
             </div>
         </div>
         <div style="margin-top: 5px;">
