@@ -17,6 +17,7 @@
     margin-bottom: 20px;
     border-radius: 20px;
     border: 1px solid;
+    position: relative;
 }
 
 .cardMaster:hover {
@@ -35,6 +36,13 @@
     text-align: left;
     background-color: rgba(0, 0, 0, 0.116);
     border-radius: 5px;
+}
+
+#addBtn a {
+    position: absolute;
+    right: 85px;
+    top: 5px;
+    color: rgb(17, 0, 255);
 }
 
 @media only screen and (min-width: 400px) and (max-width: 720px) {

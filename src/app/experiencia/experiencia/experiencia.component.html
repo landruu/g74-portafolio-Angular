@@ -1,7 +1,7 @@
 <div class="cardMaster" *ngIf="vistaNormal">
     <h3><strong>Experiencia</strong></h3>
     <!--ADD BTN -->
-    <div id="addBtn">
+    <div id="addBtn" *ngIf="onAdmin()">
         <a (click)="switchToadd()" class="btn btn-octicon float-right p-2" aria-label="Add this file">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                 class="bi bi-plus-square-fill" viewBox="0 0 16 16" style="">
@@ -27,7 +27,7 @@
                     <p><strong>Hasta: </strong>{{experiencia.baja}}</p>
                 </div>
                 <!--Mostrar solo si esta logeado()-->
-                <div class="col-sm-2" id="interactiveBtns">
+                <div class="col-sm-2" id="interactiveBtns" *ngIf="onAdmin()">
                     <!-- EDIT BTN -->
                     <div id="editBtn">
                         <a (click)="switchToEdit(experiencia.id)" class="btn btn-octicon float-right p-2" aria-label="Edit this file"><svg

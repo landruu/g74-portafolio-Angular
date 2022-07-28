@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/model/experiencia';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 
 
@@ -11,7 +12,7 @@ import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 
 export class ExperienciaComponent implements OnInit {
 
-  constructor(public expData: ExperienciaService) { }
+  constructor(public expData: ExperienciaService, private isLoggeed: AutenticacionService) { }
 
 
 
@@ -30,6 +31,10 @@ export class ExperienciaComponent implements OnInit {
 
   ngOnInit(): void {
     this.extraerData();
+  }
+
+  onAdmin(): Boolean {
+    return this.isLoggeed.isUserLogged();
   }
 
   //Extraigo datos
@@ -78,8 +83,9 @@ export class ExperienciaComponent implements OnInit {
     // Instancio el nuevo Objeto
     const Newexp = new Experiencia(this.newName, this.newLogo, this.newDesc, this.newAlta, this.newBaja);
 
-    // Controlo si esta queriendo agregar una experiencia actual
-    if (Newexp.baja == null) {
+    // Si actualmente trabaja indicando por el CheckBox
+    let check = document.getElementById('dateEdit');
+    if ( ('#dateEdit').valueOf() !== '' ) {
       Newexp.baja = 'Actualmente Activo';
     }
 

@@ -14,7 +14,7 @@ export class MitagComponent implements OnInit {
 
   persEdit: Persona = null;
 
-  constructor(private persServicio: PersonaService) { }
+  constructor(private persServicio: PersonaService, private isLogged: AutenticacionService) { }
 
   vistaNormal: boolean = true;
   vistaEdit: boolean = false;
@@ -28,6 +28,9 @@ export class MitagComponent implements OnInit {
   ngOnInit(): void {
     this.extraerData()
     this.preEdit();
+  }
+  onAdmin(): Boolean {
+    return this.isLogged.isUserLogged();
   }
 
   // Shwicheo vistas

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Educacion } from '../model/educacion';
+import { AutenticacionService } from '../servicios/autenticacion.service';
 import { EducacionService } from '../servicios/educacion.service';
 
 @Component({
@@ -10,14 +11,14 @@ import { EducacionService } from '../servicios/educacion.service';
 
 export class FormacionComponent implements OnInit {
 
-  newInstitucion:String = '';
-  newLogo:String = '';
-  newDescripcion:String = '';
-  newCompleto:Boolean = false;
-  newDuracion:String = '';
+  newInstitucion: String = '';
+  newLogo: String = '';
+  newDescripcion: String = '';
+  newCompleto: Boolean = false;
+  newDuracion: String = '';
 
 
-  constructor(private eduData: EducacionService) {}
+  constructor(private eduData: EducacionService, private isLogged: AutenticacionService) { }
 
   vistaNormal: boolean = true;
   vistaAdd: boolean = false;
@@ -30,6 +31,10 @@ export class FormacionComponent implements OnInit {
   ngOnInit(): void {
     this.extraerData();
   }
+
+  onAdmin(): Boolean {
+    return this.isLogged.isUserLogged();
+  };
 
   //Extraigo datos
   private extraerData(): void {
@@ -56,24 +61,24 @@ export class FormacionComponent implements OnInit {
     this.preEdit(id);
   }
 
-    //agregar 
-    addForm() {
+  //agregar 
+  addForm() {
 
-      // Deshabilito el boton para evitar errores.
-      let disableBtn = document.getElementById('addExpBtn');
-      disableBtn.setAttribute('disabled', 'true');
-  
-      const newEdu = new Educacion(this.newInstitucion, this.newLogo, this.newDescripcion, this.newCompleto, this.newDuracion);
-      this.eduData.save(newEdu).subscribe(() => {
-        this.defaultVist();
-        location.reload();
-      }, err => {
-        this.defaultVist();
-        alert('Algo No ha salido bien');
-      })
-    }
+    // Deshabilito el boton para evitar errores.
+    let disableBtn = document.getElementById('addExpBtn');
+    disableBtn.setAttribute('disabled', 'true');
 
-      // Borrar
+    const newEdu = new Educacion(this.newInstitucion, this.newLogo, this.newDescripcion, this.newCompleto, this.newDuracion);
+    this.eduData.save(newEdu).subscribe(() => {
+      this.defaultVist();
+      location.reload();
+    }, err => {
+      this.defaultVist();
+      alert('Algo No ha salido bien');
+    })
+  }
+
+  // Borrar
   delete(id?: number) {
     this.defaultVist();
     if (id != undefined) {
@@ -88,19 +93,13 @@ export class FormacionComponent implements OnInit {
 
   // Pre-Edit
   preEdit(id: number) {
-    
+
     this.eduData.detail(id).subscribe(data => {
       this.formEdit = data;
     }, () => {
       alert('Algo No ha salido bien');
     })
-    // let nowYear = new Date().getUTCFullYear();
-    // let nowMonth = new Date().getFullYear();
-    // let nowDay = new Date().getDay();
 
-    // let regDate = this.expEdit.baja;
-    // console.log(nowYear.toString()+ '-' + nowMonth.toString() + '-' + nowDay.toString());
-    // console.log(regDate);
   }
 
   // Edit

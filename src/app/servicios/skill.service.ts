@@ -30,4 +30,9 @@ export class SkillService {
   public delete(id: number): Observable<any> {
     return this.httpVar.delete<any>(this.url + `/borrar/${id}`)
   }
+
+  // detail
+  public detail(id?: number): Observable<Skill> {
+    return this.httpVar.get<Skill>(this.url + `/detail/${id}`);
+  }
 }
