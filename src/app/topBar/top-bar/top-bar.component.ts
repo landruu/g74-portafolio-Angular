@@ -19,11 +19,8 @@ export class TopBarComponent implements OnInit {
   }
 
   NoAdmin() {
-    this.isLogged.logout();
-    this.goStart();
-  }
-  goStart(){
-    this.rutear.navigate(['']);
+    this.isLogged.logout(); // Deslogeo
+    location.reload(); // Recargo página
   }
 
 }
