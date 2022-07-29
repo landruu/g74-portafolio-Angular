@@ -35,6 +35,8 @@ export class AppLoginComponent implements OnInit {
         if (Response) {
           alert('validado')
           this.ruta.navigate([''])
+        } else {
+          alert('Usuario o Contraseña Incorrectos')
         }
       }
     )
