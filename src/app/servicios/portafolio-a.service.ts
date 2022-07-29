@@ -10,7 +10,8 @@ import { Persona } from '../model/persona';
 
 export class PortafolioAService {
 
-  url = 'https://porfolio-andres-ap.web.app/usuario/ver'
+  url = 'https://porfolio-andres-ap.web.app/project'
+  //url = 'https://porfolio-andres-ap.web.app/usuario/ver'
 
   constructor(private http: HttpClient) { }
 
