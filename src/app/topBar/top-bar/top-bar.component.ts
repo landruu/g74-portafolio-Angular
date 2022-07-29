@@ -15,7 +15,6 @@ export class TopBarComponent implements OnInit {
   }
 
   onAdmin(): Boolean {
-    this.goStart();
     return this.isLogged.isUserLogged();
   }
 
