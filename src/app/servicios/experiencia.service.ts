@@ -8,7 +8,7 @@ import { Experiencia } from '../model/experiencia';
 })
 export class ExperienciaService {
 
-  url = 'http://localhost:8080/exp'
+  url = 'https://porfolio-andres-ap.web.app/exp'
 
   constructor(private httpVar: HttpClient) { }
 

@@ -9,7 +9,7 @@ import { Skill } from '../model/skill';
 
 export class SkillService {
 
-  url = 'http://localhost:8080/skill'
+  url = 'https://porfolio-andres-ap.web.app/skill'
 
   constructor(private httpVar: HttpClient) { }
 

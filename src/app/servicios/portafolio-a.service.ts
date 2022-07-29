@@ -10,7 +10,7 @@ import { Persona } from '../model/persona';
 
 export class PortafolioAService {
 
-  url = 'http://localhost:8080/usuario/ver'
+  url = 'https://porfolio-andres-ap.web.app/usuario/ver'
 
   constructor(private http: HttpClient) { }
 
