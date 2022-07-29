@@ -32,6 +32,6 @@ export class AutenticacionService {
   //Logearse
   public isUserLogged(): Boolean {
     //return sessionStorage.getItem("user") !== null; // Descomentar para que funcione el simulador de logeo true
-    return sessionStorage.getItem("user") === null;
+    return sessionStorage.getItem("user") !== null;
   }
 }

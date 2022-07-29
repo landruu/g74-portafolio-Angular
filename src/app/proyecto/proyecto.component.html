@@ -1,6 +1,16 @@
-<div class="cardMaster">
+<div class="cardMaster" *ngIf="vistaNormal">
 
     <h3><strong>Proyectos</strong></h3>
+    <!--ADD BTN -->
+    <div id="addBtn" *ngIf="onAdmin()">
+        <a (click)="switchToadd()" class="btn btn-octicon float-right p-2" aria-label="Add this file">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                class="bi bi-plus-square-fill" viewBox="0 0 16 16" style="">
+                <path
+                    d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z" />
+            </svg>
+        </a>
+    </div>
 
     <div class="cardChild">
 
@@ -30,12 +40,33 @@
                                 </svg> Ver proyecto </a>
                         </button>
                     </div>
-                    <!--Se muestra si esta logeado()-->
-                    <div class="col-sm-2 d-flex" *ngIf="false">
-                        <app-lapiz></app-lapiz>
-                        <app-add-btn></app-add-btn>
-                        <app-del-btn></app-del-btn>
+
+                    <!--Mostrar solo si esta logeado()-->
+                    <div class="container d-flex" id="interactiveBtns" *ngIf="onAdmin()">
+                        <!-- EDIT BTN -->
+                        <div id="editBtn" class="col-sm-6">
+                            <a (click)="switchToEdit(project.id)" class="btn btn-octicon float-right p-2"
+                                aria-label="Edit this file"><svg aria-hidden="true" height="16" viewBox="0 0 16 16"
+                                    version="1.1" width="16" data-view-component="true" class="octicon octicon-pencil"
+                                    style="color: rgba(17, 0, 255, 0.61);">
+                                    <path fill-rule="evenodd"
+                                        d="M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z">
+                                    </path>
+                                </svg></a>
+                        </div>
+                        <!-- DEL BTN -->
+                        <div id="delBtn" class="col-sm-6">
+                            <a (click)="delete(project.id)" class="btn btn-octicon float-right p-2"
+                                aria-label="Add this file">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-trash-fill" viewBox="0 0 16 16" style="color: rgba(255, 30, 0, 0.61);">
+                                    <path
+                                        d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
+
                 </div>
 
             </div>
@@ -44,3 +75,82 @@
     </div>
 
 </div>
+<!-- Agregar Proyectos -->
+<section id="addProyect" class="cardMaster" *ngIf="vistaAdd">
+    nombre, iniciado, descripcion, link
+    <h3><strong>Agregar Proyectos</strong></h3>
+
+    <form class="cardChild">
+
+        <label for="newName" class="form-label">Nombre</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="newName" name="newName" [(ngModel)]="newName">
+        </div>
+
+        <div class="col-sm-3" style="margin-left: 10px;">
+            <label for="newInicio" class="form-label">Fecha de inicio</label><br>
+            <input type="date" class="form-control" id="newInicio" name="newInicio" [(ngModel)]="newInicio">
+        </div>
+
+        <label for="newDesc" class="form-label">Descripcion </label>
+        <div class="input-group">
+            <input style="height: 50px;" type="text" class="form-control" id="newDesc" name="newDesc"
+                [(ngModel)]="newDesc">
+        </div>
+
+        <label for="newLink" class="form-label">Link del proyecto </label>
+        <div class="input-group">
+            <input type="text" class="form-control" id="newLink" name="newLink"
+                [(ngModel)]="newLink">
+        </div>
+
+        <div style="margin-top: 5px;">
+            <button (click)="defaultVist()" type="button" style="margin-right: 5px; padding: 5px;"
+                class="btn btn-secondary">Volver</button>
+            <button id="addbBtn" (click)="addForm()" type="button" style="padding: 5px;"
+                class="btn btn-primary">Agregar</button>
+        </div>
+
+    </form>
+
+</section>
+
+<!-- Editar Proyectos -->
+<section id="editProyect" class="cardMaster" *ngIf="vistaEdit">
+
+    <h3><strong>Editar Proyectos</strong></h3>
+
+    <form class="cardChild">
+
+        <label for="newName" class="form-label">Nombre</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="newName" name="newName" [(ngModel)]="projectEdit.nombre">
+        </div>
+
+        <div class="col-sm-3" style="margin-left: 10px;">
+            <label for="newInicio" class="form-label">Fecha de inicio</label><br>
+            <input type="date" class="form-control" id="newInicio" name="newInicio" [(ngModel)]="projectEdit.iniciado">
+        </div>
+
+        <label for="newDesc" class="form-label">Descripcion </label>
+        <div class="input-group">
+            <input style="height: 50px;" type="text" class="form-control" id="newDesc" name="newDesc"
+                [(ngModel)]="projectEdit.descripcion">
+        </div>
+
+        <label for="newLink" class="form-label">Link del proyecto </label>
+        <div class="input-group">
+            <input type="text" class="form-control" id="newLink" name="newLink"
+                [(ngModel)]="projectEdit.link">
+        </div>
+
+        <div style="margin-top: 5px;">
+            <button (click)="defaultVist()" type="button" style="margin-right: 5px; padding: 5px;"
+                class="btn btn-secondary">Volver</button>
+            <button id="editbBtn" (click)="editar(projectEdit.id)" type="button" style="padding: 5px;"
+                class="btn btn-primary">Agregar</button>
+        </div>
+
+    </form>
+
+</section>

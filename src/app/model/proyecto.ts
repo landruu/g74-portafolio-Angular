@@ -3,12 +3,12 @@ export class Proyecto {
     nombre:String;
     iniciado:String;
     descripcion:String;
-    link:URL;
+    link:String;
 
-    constructor(nombre:String, inciado:String,descripcion:String,link:URL){
+    constructor(nombre:String, iniciado:String,descripcion:String,link:String){
         this.nombre=nombre;
-        this.iniciado=inciado;
+        this.iniciado=iniciado;
         this.descripcion=descripcion;
-        this.link=link;        
+        this.link=link;
     }
 }

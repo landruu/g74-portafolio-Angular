@@ -17,6 +17,7 @@
     margin-bottom: 20px;
     border-radius: 20px;
     border: 1px solid;
+    position: relative;
 }
 
 .cardMaster:hover {
@@ -44,6 +45,13 @@
 .card-body:hover {
     box-shadow: 5px 5px 17px rgba(0, 0, 0, 0.452);
     margin: 12px;
+}
+
+#addBtn a {
+    position: absolute;
+    right: 85px;
+    top: 5px;
+    color: rgb(17, 0, 255);
 }
 
 

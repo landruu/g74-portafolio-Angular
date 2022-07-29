@@ -66,6 +66,7 @@ export class ExperienciaComponent implements OnInit {
   // Control automatico: Actualmente Activo
   disableDateAdd() {
     let check = document.getElementById('dateAdd');
+    console.log(check)
     check.setAttribute('disabled', 'true');
   }
   disableDateEdit() {
@@ -84,8 +85,8 @@ export class ExperienciaComponent implements OnInit {
     const Newexp = new Experiencia(this.newName, this.newLogo, this.newDesc, this.newAlta, this.newBaja);
 
     // Si actualmente trabaja indicando por el CheckBox
-    let check = document.getElementById('dateEdit');
-    if ( ('#dateEdit').valueOf() !== '' ) {
+    let check = document.getElementById('dateDiv').querySelector('input').value;
+    if (check === '') {
       Newexp.baja = 'Actualmente Activo';
     }
 
@@ -131,13 +132,13 @@ export class ExperienciaComponent implements OnInit {
     disableBtn.setAttribute('disabled', 'true');
 
     // Controlar si se modifica una baja pre-asignada por un valor actual.
-    let check = document.getElementById('dateEdit');
-    if (check != null ) {
+    let check = document.getElementById('dateDiv').querySelector('input').value;
+    //let checkBox = document.getElementById('CheckDiv').querySelector('input');
+    if (check === '') {
       this.expEdit.baja = 'Actualmente Activo';
     }
 
-    this.expData.update(id, this.expEdit).subscribe(data => {
-      this.expEdit = data;
+    this.expData.update(id, this.expEdit).subscribe(() => {
       location.reload();
     }, () => {
       alert('Algo No ha salido bien');

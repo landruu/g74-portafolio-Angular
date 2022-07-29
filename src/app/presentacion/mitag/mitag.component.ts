@@ -60,8 +60,7 @@ export class MitagComponent implements OnInit {
     disableBtn.setAttribute('disabled', 'true');
 
     let id = 1;
-    this.persServicio.update(id, this.persEdit).subscribe(data => {
-      this.persEdit = data;
+    this.persServicio.update(id, this.persEdit).subscribe(() => {
       location.reload();
     }, err => {
       alert('Algo No ha salido bien');

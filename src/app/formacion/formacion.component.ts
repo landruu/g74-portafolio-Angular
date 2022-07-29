@@ -109,8 +109,7 @@ export class FormacionComponent implements OnInit {
     let disableBtn = document.getElementById('expEdit.id');
     disableBtn.setAttribute('disabled', 'true');
 
-    this.eduData.update(id, this.formEdit).subscribe(data => {
-      this.formEdit = data;
+    this.eduData.update(id, this.formEdit).subscribe(() => {
       location.reload();
     }, () => {
       alert('Algo No ha salido bien');

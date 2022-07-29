@@ -29,4 +29,9 @@ export class ProyectoService {
   public delete(id: number): Observable<any> {
     return this.httpVar.delete<any>(this.url + `/borrar/${id}`)
   }
+
+  // detail
+  public detail(id?: number): Observable<Proyecto> {
+    return this.httpVar.get<Proyecto>(this.url + `/detail/${id}`);
+  }
 }

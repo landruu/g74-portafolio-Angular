@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { __values } from 'tslib';
 import { Skill } from '../model/skill';
+import { AutenticacionService } from '../servicios/autenticacion.service';
 import { SkillService } from '../servicios/skill.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class SkillComponent implements OnInit {
   newDesc: String = '';
   newAvance: number = 0;
 
-  constructor(private skillData: SkillService) { }
+  constructor(private skillData: SkillService, private isLoggeed: AutenticacionService) { }
 
   vistaNormal: boolean = true;
   vistaAdd: boolean = false;
@@ -27,6 +28,10 @@ export class SkillComponent implements OnInit {
 
   ngOnInit(): void {
     this.extraerData();
+  }
+
+  onAdmin():Boolean {
+    return this.isLoggeed.isUserLogged();
   }
 
   // Extraer Datos
@@ -110,8 +115,9 @@ export class SkillComponent implements OnInit {
     let disableBtn = document.getElementById('editbBtn');
     disableBtn.setAttribute('disabled', 'true');
 
-    this.skillData.update(id, this.skillEdit).subscribe(data => {
-      this.skillEdit = data;
+    const skillEdit = new Skill(this.skillEdit.nombre, this.skillEdit.descripcion, this.skillEdit.avance);
+
+    this.skillData.update(id, skillEdit).subscribe(() => {
       location.reload();
     }, () => {
       alert('Algo No ha salido bien');
