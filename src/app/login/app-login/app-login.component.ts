@@ -34,7 +34,7 @@ export class AppLoginComponent implements OnInit {
       (Response: Boolean) => {
         if (Response) {
           alert('validado')
-          //this.ruta.navigate([''])
+          this.ruta.navigate([''])
         }
       }
     )
