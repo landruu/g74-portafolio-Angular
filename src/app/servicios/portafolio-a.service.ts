@@ -10,7 +10,7 @@ import { Persona } from '../model/persona';
 
 export class PortafolioAService {
 
-  url = 'https://porfolio-andres-ap.web.app/project'
+  url = 'https://andres-ap.herokuapp.com/project'
   //url = 'https://porfolio-andres-ap.web.app/usuario/ver'
 
   constructor(private http: HttpClient) { }

@@ -9,7 +9,7 @@ import { Skill } from '../model/skill';
 
 export class SkillService {
 
-  url = 'https://porfolio-andres-ap.web.app/skill'
+  url = 'https://andres-ap.herokuapp.com/skill'
 
   constructor(private httpVar: HttpClient) { }
 

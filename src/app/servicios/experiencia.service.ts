@@ -8,7 +8,7 @@ import { Experiencia } from '../model/experiencia';
 })
 export class ExperienciaService {
 
-  url = 'https://porfolio-andres-ap.web.app/exp'
+  url = 'https://andres-ap.herokuapp.com/exp'
 
   constructor(private httpVar: HttpClient) { }
 
